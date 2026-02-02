@@ -1,9 +1,17 @@
+import sys
+import os
+
+# Add project root to Python path
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
+from main import app  # noqa: E402
+
 from fastapi.testclient import TestClient
-from main import app
 
 client = TestClient(app)
 
+
 def test_health():
-    r = client.get("/health")
-    assert r.status_code == 200
-    assert r.json()["status"] == "ok"
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
