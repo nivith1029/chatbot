@@ -1,6 +1,12 @@
 .venv/
 __pycache__/
 *.pyc
-chat.db
 .DS_Store
 
+# Local data
+*.db
+rag_store/
+
+# Test documents
+*.pdf
+*.txt
