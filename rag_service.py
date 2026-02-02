@@ -1,6 +1,8 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from pydantic import BaseModel, Field
-import os, json, time
+import os
+import json
+import time
 from typing import List, Optional
 import numpy as np
 import requests
